@@ -15,6 +15,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class TestApp
 {
     private PersonService personService;
+    private PersonService studentService;
     @Before
     public void setUpPerson() throws Exception {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -27,4 +28,7 @@ public class TestApp
         System.out.println("The Person's address is " + personService.getPerson().getAddress());
         Assert.assertEquals(person.getfName(), "Vulombe");
     }
+
+
+
 }
