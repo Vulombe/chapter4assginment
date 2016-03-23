@@ -2,11 +2,9 @@ package cput.ac.za.conf;
 
 import cput.ac.za.services.PersonService;
 import cput.ac.za.softwaredesignprinciple.violation.AnimalServiceISP;
-import cput.ac.za.softwaredesignprinciple.violation.Impl.PaymentViolationImplOCP;
-import cput.ac.za.softwaredesignprinciple.violation.Impl.ReptileServiceImpl;
-import cput.ac.za.softwaredesignprinciple.violation.Impl.UserServiceImplSRP;
-import cput.ac.za.softwaredesignprinciple.violation.Impl.VehicleDIPImpl;
+import cput.ac.za.softwaredesignprinciple.violation.Impl.*;
 import cput.ac.za.softwaredesignprinciple.violation.PersonServiceSRP;
+import cput.ac.za.softwaredesignprinciple.violation.ProjectServiceLSK;
 import cput.ac.za.softwaredesignprinciple.violation.SalaryViolationOCP;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,5 +37,11 @@ public class AppCinfigViolation
     public PersonServiceSRP getUser()
     {
         return new UserServiceImplSRP();
+    }
+
+    @Bean(name = "lskfigo")
+    public ProjectServiceLSK getProjectFigo()
+    {
+        return new ProjectServiceFigoImpl();
     }
 }

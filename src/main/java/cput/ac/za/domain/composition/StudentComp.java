@@ -5,11 +5,25 @@ package cput.ac.za.domain.composition;
  */
 public class StudentComp
 {
-    private PersonComp personComp = new PersonComp();
+    private PersonComp personComp;
     String sNumber;
 
-    public StudentComp() {
+    public StudentComp()
+    {
+        this.personComp = new PersonComp();
+        personComp.setfName("Chauke");
     }
 
+    public void setsNumber(String sNumber) {
+        this.sNumber = sNumber;
+    }
+
+    public String getsNumber() {
+        return sNumber;
+    }
+    public String getFname()
+    {
+        return personComp.getfName();
+    }
 
 }

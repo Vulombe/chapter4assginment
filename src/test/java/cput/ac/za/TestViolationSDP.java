@@ -5,6 +5,7 @@ import cput.ac.za.softwaredesignprinciple.violation.AnimalServiceISP;
 import cput.ac.za.softwaredesignprinciple.violation.Impl.CarDIPImpl;
 import cput.ac.za.softwaredesignprinciple.violation.Impl.VehicleDIPImpl;
 import cput.ac.za.softwaredesignprinciple.violation.PersonServiceSRP;
+import cput.ac.za.softwaredesignprinciple.violation.ProjectServiceLSK;
 import cput.ac.za.softwaredesignprinciple.violation.SalaryViolationOCP;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,12 +18,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class TestViolationSDP
 {
-    //Start of Open Close Principle
+
     private SalaryViolationOCP salaryViolationOCP;
     private VehicleDIPImpl vehicleDIP;
     private CarDIPImpl carDIP;
     private AnimalServiceISP animalServiceISP;
     private PersonServiceSRP personSRP;
+    private ProjectServiceLSK projects;
+    //Start of Open Close Principle
     @Before
     public void setUpPaymentViolationOCP() throws Exception
     {
@@ -92,4 +95,21 @@ public class TestViolationSDP
     }
 
     //End of Single Responsibility Principle
+
+    // Start of Liskov's Substitution Principle(LSP)
+
+    @Before
+    public void setUpProject() throws Exception {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppCinfigViolation.class);
+        projects = (ProjectServiceLSK)ctx.getBean("lskfigo");
+
+    }
+
+    @Test
+    public void testProject() throws Exception {
+        boolean ans = false;
+        Assert.assertEquals(projects.InstallPlumping(),ans);
+    }
+
+    // End of Liskov's Substitution Principle(LSP)
 }
