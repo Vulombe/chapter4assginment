@@ -14,7 +14,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Created by student on 2016/03/14.
  */
-public class TestApp
+public class TestObjectOriented
 {
 //********************* For Encapsulation **********
     private PersonService personService;

@@ -6,5 +6,4 @@ package cput.ac.za.softwaredesignprinciple.violation;
 public interface SalaryViolationOCP
 {
     String makePaymentToo(String position);
-
 }
