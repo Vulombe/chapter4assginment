@@ -43,5 +43,4 @@ public class AppConfigCorrection
         return new UserServiceImpl();
     }
 
-
 }
